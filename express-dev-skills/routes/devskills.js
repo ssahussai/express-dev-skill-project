@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 var devskillCtrl = require('../controllers/devskills');
 
-/* GET devskill listing. */
-router.get('/', devskillCtrl.index);
+router.get('/', devskillCtrl.index); /* GET devskill listing */
+router.get('/new', devskillCtrl.new); /* add new dev skill */
+router.get('/:id', devskillCtrl.show); /* GET devskill/id. */
+router.post('/', devskillCtrl.create); 
 
-/* GET devskill/id. */
-router.get('/:id', devskillCtrl.show);
 
 module.exports = router;
 

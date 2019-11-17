@@ -2,12 +2,15 @@ var Devskill = require('../models/devskill');
 
 module.exports = {
     index,
-    show
+    show,
+    new: newSkill,
+    create
 };
 
 function index(req, res) {
     res.render('devskills/index', {
-      devskills: Devskill.getAll()
+      devskills: Devskill.getAll(),
+      time: req.time
     });
   };
 
@@ -17,3 +20,13 @@ function index(req, res) {
       devskillNum: parseInt(req.params.id) + 1
     });
   };
+
+  function newSkill(req, res) {
+    res.render('devskills/new');
+  };
+
+  function create(req, res) {
+    req.body.learned = 'Ongoing';
+    Devskill.create(req.body);
+    res.redirect('/devskills');
+  }

@@ -8,7 +8,7 @@
     <title>My Developer Skills</title>
 </head>
 <body>
-    <h1>Developer's Skills That I am Acquiring...</h1>
+    <h1>Developer's Skills That I am Acquiring as of <%= time %> </h1>
     <a href="/">Home</a>
     <ul>
         <% devskills.forEach(function(s, idx) { %>
@@ -17,5 +17,6 @@
             </li>
        <% }); %>
     </ul>
+    <a href="/devskills/new">Add a New Dev Skill</a>
 </body>
 </html>
