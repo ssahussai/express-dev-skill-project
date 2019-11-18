@@ -23,7 +23,7 @@ function getAll() {
 }
 
 function getOne(id) {
-    return devskills[id];
+    return devskills[parseInt(id)];
 }
 
 function create(devskill) {
