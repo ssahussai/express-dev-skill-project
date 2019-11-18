@@ -14,7 +14,8 @@ const devskills = [
 module.exports = {
     getAll,
     getOne,
-    create 
+    create,
+    deleteOne
 };
 
 function getAll() {
@@ -27,4 +28,8 @@ function getOne(id) {
 
 function create(devskill) {
     devskills.push(devskill);
+}
+
+function deleteOne(id) {
+    devskills.splice(id, 1);
 }

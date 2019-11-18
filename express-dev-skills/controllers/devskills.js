@@ -4,7 +4,8 @@ module.exports = {
     index,
     show,
     new: newSkill,
-    create
+    create,
+    delete: deleteDevskill
 };
 
 function index(req, res) {
@@ -28,5 +29,10 @@ function index(req, res) {
   function create(req, res) {
     req.body.learned = 'Ongoing';
     Devskill.create(req.body);
+    res.redirect('/devskills');
+  }
+
+  function deleteDevskill(req, res) {
+    Devskill.deleteOne(req.params.id);
     res.redirect('/devskills');
   }

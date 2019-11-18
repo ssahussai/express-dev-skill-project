@@ -13,6 +13,10 @@
     <ul>
         <% devskills.forEach(function(s, idx) { %>
             <li>
+                <form action="/devskills/<%= idx %>?_method=DELETE"
+                    class="delete-form" method="POST">
+                    <button type="submit">X</button>
+                </form>
                 <a href="/devskills/<%= idx %>"><%= s.skill %><a href="/devskills/ <%= idx %>"><%= s.devskill %></a>
             </li>
        <% }); %>
