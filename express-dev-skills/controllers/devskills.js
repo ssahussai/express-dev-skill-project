@@ -11,7 +11,7 @@ module.exports = {
 function index(req, res) {
     res.render('devskills/index', {
       devskills: Devskill.getAll(),
-      time: req.time
+      time: req.time = new Date().toLocaleDateString()
     });
   };
 
